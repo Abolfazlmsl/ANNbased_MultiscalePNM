@@ -3,7 +3,6 @@ import pandas as pd
 from PIL import Image
 import porespy as pp
 import openpnm as op
-import pickle
 import glob
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, accuracy_score
@@ -16,10 +15,6 @@ resolution = 3.9 * 1e-6
 
 output_path = "./ML_output/"
 fileResultname = "FinalResult"
-
-classfilename = "ILS_classifier_model2.pkl"
-regFilename = "ILS_regressor_model2.pkl"
-diamFilename = "ILS_diameter_model2.pkl"
 
 path = './path_to_HR_images_folder/'
 image_format = '*.tif'
