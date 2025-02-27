@@ -136,7 +136,6 @@ def connect(mainNetwork, networks, neighbors, connectedRegions,
         new_coords = mainNetwork['pore.coords'][mergeThroatsMacro[:,1][np.sort(mainIndices)]]
         new_pores_diam = mainNetwork['pore.equivalent_diameter'][mergeThroatsMacro[:,1][np.sort(mainIndices)]]
         
-        #I think network should be mainNetwork
         op.topotools.extend(network=mainNetwork, coords=new_coords)
         op.topotools.extend(network=mainNetwork, conns=mergeThroatsMacroCluster, labels="new_macro")
         
@@ -171,7 +170,7 @@ def connect(mainNetwork, networks, neighbors, connectedRegions,
                 dt_all.append(dt_current)
                 op.topotools.trim(network, short_path['edge_paths'][0])
             
-            #Find the common throats 
+            #Find the shared throats 
             adjusted_throats = adjust_current_values(pore_all)
             
             for throat, occurrences in adjusted_throats.items():

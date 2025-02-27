@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 import openpnm as op
 import porespy as pp
-import connetNetworks
+import connectNetworks
 import openpnm.models.physics as mods
 from Relperm import RelativePermeability
 import time
@@ -145,7 +145,7 @@ poreNumsBefore = len(network.Ps)
 throatNumsBefore = len(network.Ts)
 
 start_time = time.time()
-highResNetwork, microThroats, macroThroats, randomState = connetNetworks.connect(
+highResNetwork, microThroats, macroThroats, randomState = connectNetworks.connect(
     network, 
     highResNetworks, 
     neighbors, 
